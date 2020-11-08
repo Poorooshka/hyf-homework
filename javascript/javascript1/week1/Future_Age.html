@@ -10,15 +10,19 @@
 
 
     <script>
-        const yearOfBirth = 1984;
-        let yearFuture = 2045;
 
-        let age = yearFuture - yearOfBirth;
+function futureAge(yearOfBirth, yearFuture)
+        {
+            let age = yearFuture - yearOfBirth;
+            console.log("You will be " + age + " years old in " + yearFuture)
+            console.log(typeof yearFuture)
+            console.log(typeof yearOfBirth)
+        }
 
-        console.log(typeof yearOfBirth)
-        console.log(typeof yearFuture)
+        const result = futureAge(1984, 2045);
+        
 
-        console.log("You will be " + age + " years old in " + yearFuture)
+        
 
     </script>
 </body>
