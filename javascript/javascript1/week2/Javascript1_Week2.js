@@ -17,6 +17,7 @@ console.log(customer2)
 
 
 
+
 //Use Formal Name
 
 function getFullname(firstName, surName, useFormalName) {
@@ -33,6 +34,7 @@ function getFullname(firstName, surName, useFormalName) {
 return fullName;
 
 }
+
 
 
 
@@ -81,6 +83,7 @@ function whatToWear(temperature) {
 
 const clothesToWear = whatToWear(18);
 console.log(clothesToWear);
+
 
 
 
