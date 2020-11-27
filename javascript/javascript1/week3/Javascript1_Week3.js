@@ -13,14 +13,14 @@
   ];
   
 const nameToRemove = "Ahmad"
-  function findIndex(nameToRemove) { 
+  function searchIndex(nameToRemove) { 
   for(let i=0; i < names.length; i++) {
       if (names[i]===nameToRemove) {
           return i;
       }
   }
 }
-const nameIndex = findIndex("Ahmad");
+const nameIndex = searchIndex("Ahmad");
 names.splice(nameIndex,1);
 console.log(names);
 
@@ -29,7 +29,6 @@ console.log(names);
 
 //When will we be there?? -----------Counting Time
 
-"use strict";
 
 const travelInformation = {
     speed: 50,
@@ -56,7 +55,6 @@ const travelInformation = {
 
   //Series duration of my life
 
-  "use strict";
 
   const seriesDurations = [
     {
@@ -99,7 +97,7 @@ const travelInformation = {
 
 //Note taking app
   //Save The Notes
-  "use strict";
+ 
 
   const notes = [];
   function saveNote(content, id){
@@ -117,7 +115,6 @@ console.log(notes);
 
 //Get A Note
 
-"use strict";
 
 function getNote(id) {
 for (let i=0; i < notes.length; i++) {
