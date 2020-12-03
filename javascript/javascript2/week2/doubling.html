@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+
+    </head>
+
+    <body>
+
+
+        <script type="text/javascript">
+            let numbers = [1, 2, 3, 4];
+            let newNumbers = [];
+            let doubledNumbers = [];
+
+           
+
+            const oddNumber = number=> number % 2 !== 0;
+            const double = oddNum=> { console.log("The doubled numbers are", oddNum*2);}
+            newNumbers = numbers.filter(oddNumber);
+            doubledNumbers = newNumbers.map(double);
+
+
+
+        </script>
+    </body>
+
+
+</html>
