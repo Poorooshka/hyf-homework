@@ -1,0 +1,61 @@
+//Find and count the Danish letters
+//Find the individual number and the total number of Danish letters in a string.
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <title>Find Danish letters</title>
+
+    </head>
+
+    <body>
+
+
+    <script type="text/javascript">
+        "use strict";
+        const danishString = "Jeg har en blå bil";
+        const danishString2 = "Blå grød med røde bær";
+
+        function findDanishLetters(danishString)
+        {
+            let totalLetters = 0;
+            let numberOfÅ = 0;
+            let numberOfØ = 0;
+            let numberOfÆ = 0;
+            danishString = danishString.toLowerCase();
+            const stringArray = danishString.split("");
+            for(let i=0; i < stringArray.length; i++)
+            {
+                switch(stringArray[i])
+                {
+                    case ("å"):
+                    numberOfÅ+=1;
+                    totalLetters+=1;
+                    break;
+
+                    case ("ø"):
+                    numberOfØ+=1;
+                    totalLetters+=1;
+                    break;
+
+                    case ("æ"):
+                    numberOfÆ+=1;
+                    totalLetters+=1;
+                    break;
+                }
+            }
+            return { total :totalLetters, å :numberOfÅ, æ :numberOfÆ, ø :numberOfØ}
+        }
+
+
+        console.log(findDanishLetters(danishString)); // returns {total: 1, å: 1}
+        console.log(findDanishLetters(danishString2)); // returns {total: 4, æ: 1, ø: 2, å: 1}
+
+    </script>
+    
+    </body>
+
+
+
