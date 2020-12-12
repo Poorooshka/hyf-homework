@@ -5,7 +5,13 @@ const products = getAvailableProducts();
 const productsUl = document.querySelector('section.products ul');
 console.log(productsUl);
 
-function renderProducts(products) {products.forEach((product)=>{const li = document.createElement('li');
+function renderProducts(products) {
+        
+         while (productsUl.hasChildNodes()) {
+        productsUl.removeChild(productsUl.firstChild);
+      }
+        
+        products.forEach((product)=>{const li = document.createElement('li');
 
         let shipsToHTML = '';
         product.shipsTo.forEach(country => shipsToHTML += `<li>${country}</li>`);
