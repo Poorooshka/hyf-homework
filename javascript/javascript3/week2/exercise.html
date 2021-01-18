@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promises</title>
+    <script>
+      // const p = new Promise((resolve, reject) => {
+      //   console.log("I made a promise");
+      //   setTimeout(() => {
+      //     resolve("I fulfill my promises");
+      //   }, 5000);
+      // });
+
+      // const p = doAfterSeconds(5);
+      // p.then((value) => {
+      //   console.log(value);
+      // });
+
+      const doAfterSeconds = (seconds) => {
+        return new Promise((resolve, reject) => {
+          console.log("I made a promise");
+          setTimeout(() => {
+            resolve("I fulfill my promises");
+          }, seconds * 1000);
+        });
+      };
+
+      const homework = async () => {
+        const value = await doAfterSeconds(5);
+        console.log(value);
+      };
+
+      homework();
+
+      // --------
+
+      const url =
+        "https://raw.githubusercontent.com/bence-toth/covid-data/main/data/recovered/cumulative/exact/denmark.json";
+
+      // These two functions (consoleLogCovidDataSync and consoleLogCovidDataAsync)
+      // are exactly the same:
+      const consoleLogCovidDataSync = () => {
+        fetch(url)
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+          });
+      };
+      consoleLogCovidDataSync();
+
+      const consoleLogCovidDataAsync = async () => {
+        const response = await fetch(url);
+        const data = await response.json();
+        console.log(data);
+      };
+      consoleLogCovidDataAsync();
+
+      // -----
+      const setTimeoutPromise = (miliSeconds) => {
+        const p = new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve();
+          }, miliSeconds);
+        });
+        return p;
+      };
+
+      setTimeoutPromise(3000).then(() => {
+        console.log("Called after 3 seconds");
+      });
+
+      const getCurrentLocation = () => {
+        const p = new Promise((resolve, reject) => {
+          const success = (position) => {
+            resolve(position);
+          };
+
+          const error = () => {
+            reject("failure");
+          };
+
+          navigator.geolocation.getCurrentPosition(success, error);
+        });
+
+        return p;
+      };
+
+      getCurrentLocation()
+        .then((position) => {
+          // called when the users position is found
+          console.log(position);
+        })
+        .catch((error) => {
+          // called if there was an error getting the users location
+          console.log(error);
+        });
+    </script>
+  </head>
+  <body></body>
+</html>

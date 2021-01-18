@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promises Basics</title>
+  </head>
+
+  <body>
+    <script type="text/javascript">
+      const p = new Promise((resolve, reject) => {
+        console.log("I made a promise");
+        setTimeout(() => {
+          resolve("I fulfill my promises");
+        }, 3000);
+      });
+    </script>
+  </body>
+</html>
