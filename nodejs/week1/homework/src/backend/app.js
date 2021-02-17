@@ -8,15 +8,9 @@ const reviews = require("./data/reviews");
 
 //Adding a function to get the reviews for every meal
 function getReviews() {
-  meals.map((meal) => {
-    let matchedReviews = [];
-    reviews.map((review) => {
-      if (meal.id === review.mealId) {
-        matchedReviews.push(review);
-      }
-    });
-    meal.reviews = matchedReviews;
-    meal.reviews.map((review) => delete review.mealId);
+  meals.forEach((meal) => {
+    meal.reviews = reviews.filter((review) => meal.id === review.mealId);
+    meal.reviews.forEach((review) => delete review.mealId);
   });
   return meals;
 }
