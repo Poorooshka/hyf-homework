@@ -36,7 +36,7 @@ function getLargeMeals() {
 //Respond with the json for a random meal (including it's reviews)
 function getRandomMeal() {
   const mealsWithReviews = getReviews();
-  let randomMeal =
+  const randomMeal =
     mealsWithReviews[Math.floor(Math.random() * mealsWithReviews.length)];
   return randomMeal;
 }
