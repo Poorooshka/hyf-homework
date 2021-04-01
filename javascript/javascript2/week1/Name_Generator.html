@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>Spirit Animal Name Generator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </header>
+
+    <body>
+        <!--Create an input element, a button and a tag to display the spirit animal into-->
+        
+            <label for="name">Enter your name</label>
+            <input type="text" id="name">
+            <button id="submit">Your Spirit Animal</button>
+
+        
+        
+        <h2 id="animal"></h2>
+
+
+        <script type="text/javascript">
+
+        "use strict";
+
+            const button_element = document.getElementById("submit");
+            
+            const h2_element = document.getElementById("animal")
+            
+            const animalArray = ["old wolf", "gray eagle", "fast gazel", "crying butterfly", "white cat", "roaring lion", "brown bear"];
+           
+            button_element.addEventListener('click', nameGenerator);
+
+            const body_element = document.querySelector('body');
+            
+            const p_element = document.createElement('p');
+
+            function nameGenerator() 
+            {
+                const input_value = document.getElementById("name").value;
+                if(input_value === "")
+                { 
+                  h2_element.innerHTML = "Please enter a valid name"; 
+                  p_element.innerHTML = "Please enter a valid name";
+                }
+                else 
+                {
+                    const randomNumber = Math.floor(Math.random()*animalArray.length);
+                    
+                    h2_element.innerHTML = input_value + "- " + "The " + animalArray[randomNumber];
+                    p_element.innerHTML = input_value + "- " + "The " + animalArray[randomNumber];
+                }
+                body.appendChild(p_element);
+            }
+           
+            
+
+        </script>
+    </body>
+</html>
