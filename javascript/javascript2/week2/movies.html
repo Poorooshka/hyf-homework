@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+
+    </head>
+
+    <body>
+
+        <script src="movies.js"></script>
+        <script type="text/javascript">
+
+        "use strict";
+
+//Create an array of movies containing the movies with a short title(title smaller than 4 letters)
+
+let shortTitleMovies = [];
+
+shortTitleMovies = movies.filter(movie => movie.title.length < 4);
+console.log(shortTitleMovies);
+
+//Create an array of movie titles with long movie titles (titles bigger than 40)
+
+let longTitleMovies = [];
+longTitleMovies = movies.filter(movie=>movie.title.length > 40)
+console.log(longTitleMovies)
+
+//Count the number of movies made between 1980-1989 (including both the years)
+
+let newArray = [];
+newArray = movies.filter(movie=> 1980<movie.year<1989)
+console.log(newArray)
+
+//Create a new array that has an extra key called tag. The tag is based on the rating: 
+//Good (>= 7), Average (>= 4 and < 7), Bad (< 4)
+let ratedMovies = movies.map(movie=>{
+if(movie.rating>=7) {
+    return {...movie, tag: "Good"}
+}
+if(4<=movie.rating && movie.rating<7) {
+    return {...movie, tag: "Average"}
+}
+if(movie.rating<4) {
+    return {...movie, tag: "Bad"}
+}
+});
+
+
+
+console.log(ratedMovies)
+
+//Using chaining, first filter the movies array to only contain the movies rated higher than 6. Now map the movies array to only the rating of the movies.
+
+const highRates = movies.filter(movie=>movie.rating>6).map(movie=>movie.rating);
+console.log(highRates)
+
+//Count the total number of movies containing any of following keywords: Surfer, Alien or Benjamin. So if there were 3 movies that contained Surfer, 1 with Alien and 2 with Benjamin, you would return 6. Can you make sure the search is case insensitive?
+
+const count = movies.filter(movie=>{
+    const title = movie.title.toLowerCase();
+    const titleWords = title.split(" ");
+    if(titleWords.includes("surfer") || titleWords.includes("alien") || titleWords.includes("benjamin"));
+    {return true;}
+}).length
+
+
+console.log(count)
+
+//Create an array of movies where a word in the title is duplicated. Fx "Star Wars: The Clone Wars" the word Wars is duplicated. Here are some madeup examples of movies with duplicated words in the title: "The three men and the pistol", "Chase three - The final chase"
+const duplicate = movies.filter(movie=>{
+    const title = movie.title.toLowerCase();
+    const titleWords = title.split(" ");
+    // Let's see if we can find a word which was already in the title before
+    const foundRepeatedWord = titleWords.find((word, wordIndex)=> wordIndex !== titleWords.indexOf(word));
+
+/*     const foundRepeatedWord = titleWords.find((word, wordIndex) => {
+        const firstPositionThisWordAppears = titleWords.indexOf(word);
+        const currentPosition = wordIndex;
+        const isThisTheFirstTimeThisWordAppears = currentPosition === firstPositionThisWordAppears;
+        return !isThisTheFirstTimeThisWordAppears;
+    }) */
+    
+    return foundRepeatedWord;
+})
+console.log(duplicate)
+
+
+
+
+      </script>
+    </body>
+</html>
