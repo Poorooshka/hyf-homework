@@ -1,0 +1,54 @@
+[
+    {
+        "id": 1,
+        "type": "pet",
+        "subType": "cat",
+        "name": "Tom",
+        
+        "habits": ["lying", "purring", "sleeping", "toileting", "grooming"],
+        "attributes": {
+            "meow": true,
+            "haveKids": false,
+            "color": "white",
+            "age": 4
+        }
+    
+    },
+
+    {   "id": 2,
+        "type": "pet",
+        "subType": "dog",
+        "name": "Mads",
+        
+        "habits": ["lying", "barking", "sleeping", "toileting", "grooming", "going for a walk"],
+        "attributes": {
+            "loyal": true,
+            "haveKids": true,
+            "color": "brown",
+            "age": 6
+        }
+    
+    },
+
+    {   "id": 3,
+        "type": "pet",
+        "subType": "hamster",
+        "name": "lolo",
+        
+        "habits": ["lying", "barking", "sleeping", "toileting", "grooming", "going for a walk"],
+        "attributes": {
+            "loyal": true,
+            "haveKids": true,
+            "color": "brown",
+            "age": 6
+        }
+    
+    }
+
+
+]
+
+
+
+
+
